@@ -16,7 +16,7 @@ namespace MyTasksAPI.Models
         public bool Status { get; set; }
 
         [ForeignKey("User")]
-        public string UserID { get; set; }
+        public string IdUser { get; set; }
         public virtual ApplicationUser User { get; set; }
     }
 }
