@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyTasksAPI.Migrations
 {
-    public partial class InitialDataBase : Migration
+    public partial class InitialDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -157,8 +157,9 @@ namespace MyTasksAPI.Migrations
                 name: "Tasks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    IdTaskApi = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    IdTaskApp = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     HourDate = table.Column<DateTime>(nullable: false),
                     Updated = table.Column<DateTime>(nullable: false),
@@ -167,11 +168,12 @@ namespace MyTasksAPI.Migrations
                     Description = table.Column<string>(nullable: true),
                     Type = table.Column<string>(nullable: true),
                     Status = table.Column<bool>(nullable: false),
+                    Excluded = table.Column<bool>(nullable: false),
                     IdUser = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tasks", x => x.Id);
+                    table.PrimaryKey("PK_Tasks", x => x.IdTaskApi);
                     table.ForeignKey(
                         name: "FK_Tasks_AspNetUsers_IdUser",
                         column: x => x.IdUser,

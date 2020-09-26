@@ -9,6 +9,12 @@
     <Compile Remove="Migrations\20200926004152_InitialDataBase.Designer.cs" />
     <Compile Remove="Migrations\20200926032447_InitialDataBase2.cs" />
     <Compile Remove="Migrations\20200926032447_InitialDataBase2.Designer.cs" />
+    <Compile Remove="Migrations\20200926151056_SincronizationTasks.cs" />
+    <Compile Remove="Migrations\20200926151056_SincronizationTasks.Designer.cs" />
+    <Compile Remove="Migrations\20200926151239_Databse.cs" />
+    <Compile Remove="Migrations\20200926151239_Databse.Designer.cs" />
+    <Compile Remove="Migrations\20200926151259_DB.cs" />
+    <Compile Remove="Migrations\20200926151259_DB.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

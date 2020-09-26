@@ -9,8 +9,8 @@ using MyTasksAPI.Database;
 namespace MyTasksAPI.Migrations
 {
     [DbContext(typeof(MyTasksContext))]
-    [Migration("20200926032653_InitialDataBase")]
-    partial class InitialDataBase
+    [Migration("20200926152451_InitialDatabase")]
+    partial class InitialDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -215,7 +215,7 @@ namespace MyTasksAPI.Migrations
 
             modelBuilder.Entity("MyTasksAPI.Models.Task", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdTaskApi")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -225,8 +225,14 @@ namespace MyTasksAPI.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Excluded")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("HourDate")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("IdTaskApp")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("IdUser")
                         .HasColumnType("TEXT");
@@ -246,7 +252,7 @@ namespace MyTasksAPI.Migrations
                     b.Property<DateTime>("Updated")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdTaskApi");
 
                     b.HasIndex("IdUser");
 
