@@ -7,7 +7,7 @@ API that provides CRUD for a task list app
 ## Database
 
 * Go to Package Manager Console 
-* PM> Add-Migration BancoInicial
+* PM> Add-Migration InitialDataBase
 * PM> Update-Database
 
 ## Dependencies
