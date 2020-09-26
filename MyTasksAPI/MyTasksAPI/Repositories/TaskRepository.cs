@@ -12,7 +12,7 @@ namespace MyTasksAPI.Repositories
         private readonly MyTasksContext _database;
         public TaskRepository(MyTasksContext database)
         {
-            database = _database
+            database = _database;
         }
 
         public List<Task> Restore(ApplicationUser user, DateTime lastSincDate)
@@ -25,9 +25,28 @@ namespace MyTasksAPI.Repositories
             return query.ToList();
         }
 
-        public List<Task> Sinc(List<Task> tasks)
+        public List<Task> Sync(List<Task> tasks)
         {
-            throw new NotImplementedException();
+            var newTasks = tasks.Where(a => a.IdTaskApi == 0);
+
+            if(newTasks.Count()> 0)
+            {
+                foreach (var task in newTasks)
+                {
+                    _database.Tasks.Add(task);
+                }
+            }
+
+            var updatedExcludedTasks  = tasks.Where(a => a.IdTaskApi != 0);
+            if (updatedExcludedTasks.Count() > 0)
+            {
+                foreach(var task in updatedExcludedTasks)
+                {
+                    _database.Update(task);
+                }
+            }
+            _database.SaveChanges();
+            return newTasks.ToList();
         }
     }
 }
