@@ -12,7 +12,7 @@ namespace MyTasksAPI.Repositories
         private readonly MyTasksContext _database;
         public TaskRepository(MyTasksContext database)
         {
-            database = _database;
+            _database = database;
         }
 
         public List<Task> Restore(ApplicationUser user, DateTime lastSincDate)
