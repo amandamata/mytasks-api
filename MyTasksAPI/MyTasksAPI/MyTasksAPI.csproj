@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20200926004152_InitialDataBase.cs" />
     <Compile Remove="Migrations\20200926004152_InitialDataBase.Designer.cs" />
     <Compile Remove="Migrations\20200926032447_InitialDataBase2.cs" />
@@ -15,10 +22,6 @@
     <Compile Remove="Migrations\20200926151239_Databse.Designer.cs" />
     <Compile Remove="Migrations\20200926151259_DB.cs" />
     <Compile Remove="Migrations\20200926151259_DB.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
