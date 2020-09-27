@@ -5,8 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyTasksAPI.Database;
-using MyTasksAPI.Repositories;
-using MyTasksAPI.Repositories.Contracts;
 
 namespace MyTasksAPI
 {
@@ -26,8 +24,6 @@ namespace MyTasksAPI
             {
                 o.UseSqlite("Data Source=Database\\MyTasks.db");
             });
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ITaskRepository, TaskRepository>();
             services.AddControllers();
         }
 
