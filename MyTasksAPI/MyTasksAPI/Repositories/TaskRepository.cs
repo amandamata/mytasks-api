@@ -15,12 +15,12 @@ namespace MyTasksAPI.Repositories
             _database = database;
         }
 
-        public List<Task> Restore(ApplicationUser user, DateTime lastSincDate)
+        public List<Task> Restore(ApplicationUser user, DateTime lastSyncDate)
         {
             var query = _database.Tasks.Where(a => a.IdUser == user.Id).AsQueryable();
-            if (lastSincDate != null)
+            if (lastSyncDate != null)
             {
-                query.Where(a => a.Created >= lastSincDate || a.Updated >= lastSincDate);
+                query.Where(a => a.Created >= lastSyncDate || a.Updated >= lastSyncDate);
             }
             return query.ToList();
         }
