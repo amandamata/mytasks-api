@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyTasksAPI.Migrations
+namespace MyTasks.Migrations
 {
     public partial class InitialDatabase : Migration
     {

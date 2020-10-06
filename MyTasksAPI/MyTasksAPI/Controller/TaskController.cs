@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MyTasksAPI.Models;
-using MyTasksAPI.Repositories;
+using MyTasks.Models;
+using MyTasks.Repositories;
 using System;
 using System.Collections.Generic;
 
-namespace MyTasksAPI.Controller
+namespace MyTasks.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,11 +20,15 @@ namespace MyTasksAPI.Controller
             _userManager = userManager;
         }
 
+        [Authorize]
+        [HttpPost("sync")]
         public ActionResult Sync([FromBody] List<Task> tasks)
         {
             return Ok(_taskRepository.Sync(tasks));
         }
 
+        [Authorize]
+        [HttpGet("restore")]
         public ActionResult Restore(DateTime lastSyncDate)
         {
             var user = _userManager.GetUserAsync(HttpContext.User).Result;

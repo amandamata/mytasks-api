@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MyTasksAPI.Models
+namespace MyTasks.Models
 {
     public class UserDTO
     {

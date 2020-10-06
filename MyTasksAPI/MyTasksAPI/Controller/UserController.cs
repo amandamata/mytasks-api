@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MyTasksAPI.Models;
-using MyTasksAPI.Repositories.Contracts;
+using MyTasks.Models;
+using MyTasks.Repositories.Contracts;
 using System.Collections.Generic;
 
-namespace MyTasksAPI.Controllers
+namespace MyTasks.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,6 +19,8 @@ namespace MyTasksAPI.Controllers
             _login = login;
             _userManager = userManager;
         }
+
+        [HttpPost("login")]
         public ActionResult Login([FromBody] UserDTO userDTO)
         {
             ModelState.Remove("PersistPassword");
@@ -36,6 +38,8 @@ namespace MyTasksAPI.Controllers
             }
             else return UnprocessableEntity(ModelState);
         }
+
+        [HttpPost("")]
         public ActionResult Create([FromBody] UserDTO userDTO)
         {
             if (ModelState.IsValid)

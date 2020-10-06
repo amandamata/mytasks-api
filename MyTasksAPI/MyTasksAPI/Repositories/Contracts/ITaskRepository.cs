@@ -1,8 +1,8 @@
-﻿using MyTasksAPI.Models;
+﻿using MyTasks.Models;
 using System;
 using System.Collections.Generic;
 
-namespace MyTasksAPI.Repositories.Contracts
+namespace MyTasks.Repositories.Contracts
 {
     public interface ITaskRepository
     {

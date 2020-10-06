@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyTasksAPI.Database;
+using MyTasks.Database;
 
-namespace MyTasksAPI.Migrations
+namespace MyTasks.Migrations
 {
     [DbContext(typeof(MyTasksContext))]
     [Migration("20200926152451_InitialDatabase")]

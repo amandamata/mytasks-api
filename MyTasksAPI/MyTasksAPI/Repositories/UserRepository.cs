@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MyTasksAPI.Models;
-using MyTasksAPI.Repositories.Contracts;
+using MyTasks.Models;
+using MyTasks.Repositories.Contracts;
 using System;
 using System.Text;
 
-namespace MyTasksAPI.Repositories
+namespace MyTasks.Repositories
 {
     public class UserRepository : IUserRepository
     {

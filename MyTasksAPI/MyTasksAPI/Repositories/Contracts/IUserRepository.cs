@@ -1,6 +1,6 @@
-﻿using MyTasksAPI.Models;
+﻿using MyTasks.Models;
 
-namespace MyTasksAPI.Repositories.Contracts
+namespace MyTasks.Repositories.Contracts
 {
     public interface IUserRepository
     {
